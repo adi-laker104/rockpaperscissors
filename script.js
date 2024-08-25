@@ -53,4 +53,10 @@
     //test
     //console.log(getUserChoice());
 
+    //STEP 3: Declare the players score variables
+        //Create variable for computer score
+        //Create variable for human score
+    let computerScore = 0;
+    let humanScore = 0;
+
     
