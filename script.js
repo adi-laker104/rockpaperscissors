@@ -21,9 +21,36 @@
                     return "paper";
                 }
             };
-            
-            
-            
+
             //test:
                 //console.log(getComputerChoice())
-            
+
+//STEP 2: Write logic to prompt user and get their game action
+    //Create function getUserChoice() 
+        //Prompt user within the console to type the following:
+            //if Rock or rock, return "rock"
+            //Paper or paper, return "paper"
+            //Scissors or scissors return "scissors"
+            //if neither, print invalid input and reprompt user
+    
+    function getUserChoice() {
+        let userInput = prompt("rock, paper, or scissors? Type your choice!",'');
+            if (userInput.toLowerCase() === "rock") {
+                return "rock";
+            }
+            else if (userInput.toLowerCase() === "paper") {
+                return "paper";
+            }
+            else if (userInput.toLowerCase() === "scissors") {
+                return "scissors";
+            }
+            else {
+                console.log("Invalid input! Try again");
+                getUserChoice();
+            }
+    };
+
+    //test
+    //console.log(getUserChoice());
+
+    
