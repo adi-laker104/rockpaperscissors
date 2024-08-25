@@ -59,4 +59,48 @@
     let computerScore = 0;
     let humanScore = 0;
 
-    
+    //STEP 4: Write the logic to play a single round of the game
+        //Create a new function named playRound.
+            //playRound takes two inputs, the humanChoice and the computerChoice
+            //Human WINS if:
+                // H is rock and C is scissors
+                // H is paper and C is rock
+                // H is scissors and C is paper
+                     //print "You win, HumanChoice beats ComputerChoice"
+                    //humanScore gets increased by 1
+            //Computer WINS if:
+                // C is rock and H is scissors
+                // C is paper and H is rock
+                // C is scissors and H is paper
+                    //print "You lose, ComputerChoice beats HumanChoice"
+                    //computerScore gets increased by 1
+            //ELSE tie
+                    //print "You picked the same choice as the computer. Tie round!"
+    function playRound(humanChoice, computerChoice) {
+        if ((humanChoice === "rock" && computerChoice === "scissors") || 
+        (humanChoice === "paper" && computerChoice === "rock") || 
+        (humanChoice === "scissors" && computerChoice === "paper"))
+         {
+            console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+            humanScore++;
+         }
+        
+        else if ((computerChoice === "rock" && humanChoice === "scissors") || 
+        (computerChoice === "paper" && humanChoice === "rock") || 
+        (computerChoice === "scissors" && humanChoice === "paper"))
+        {
+            console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+            computerScore++;
+        }
+
+        else {
+            console.log("You picked the same choice as the computer. Tie round!");
+        }
+        //TEST: console.log(computerScore);
+        //TEST: console.log(humanScore);
+    };
+
+//TEST playRound function
+//const humanSelection = getUserChoice();
+//const computerSelection = getComputerChoice();
+//playRound(humanSelection, computerSelection);
