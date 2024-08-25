@@ -53,13 +53,15 @@
     //test
     //console.log(getUserChoice());
 
-    //STEP 3: Declare the players score variables
+
+    function playGame() {
+        //STEP 3: Declare the players score variables (moved into playGame)
         //Create variable for computer score
         //Create variable for human score
-    let computerScore = 0;
-    let humanScore = 0;
+        let humanScore = 0;
+        let computerScore = 0;
 
-    //STEP 4: Write the logic to play a single round of the game
+            //STEP 4: Write the logic to play a single round of the game
         //Create a new function named playRound.
             //playRound takes two inputs, the humanChoice and the computerChoice
             //Human WINS if:
@@ -76,31 +78,54 @@
                     //computerScore gets increased by 1
             //ELSE tie
                     //print "You picked the same choice as the computer. Tie round!"
-    function playRound(humanChoice, computerChoice) {
-        if ((humanChoice === "rock" && computerChoice === "scissors") || 
-        (humanChoice === "paper" && computerChoice === "rock") || 
-        (humanChoice === "scissors" && computerChoice === "paper"))
-         {
-            console.log(`You win! ${humanChoice} beats ${computerChoice}`);
-            humanScore++;
-         }
-        
-        else if ((computerChoice === "rock" && humanChoice === "scissors") || 
-        (computerChoice === "paper" && humanChoice === "rock") || 
-        (computerChoice === "scissors" && humanChoice === "paper"))
-        {
-            console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
-            computerScore++;
+                    function playRound(humanChoice, computerChoice) {
+                        if ((humanChoice === "rock" && computerChoice === "scissors") || 
+                        (humanChoice === "paper" && computerChoice === "rock") || 
+                        (humanChoice === "scissors" && computerChoice === "paper"))
+                         {
+                            console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+                            humanScore++;
+                         }
+                        
+                        else if ((computerChoice === "rock" && humanChoice === "scissors") || 
+                        (computerChoice === "paper" && humanChoice === "rock") || 
+                        (computerChoice === "scissors" && humanChoice === "paper"))
+                        {
+                            console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+                            computerScore++;
+                        }
+                
+                        else {
+                            console.log("You picked the same choice as the computer. Tie round!");
+                        }
+                        //TEST: console.log(computerScore);
+                        //TEST: console.log(humanScore);
+                    };
+
+        for (let i = 0; i < 5; i++) {
+            playRound(getUserChoice(),getComputerChoice());
+        }
+
+        if (computerScore > humanScore) {
+            console.log(`Computer wins: ${computerScore}-${humanScore}`);
+        }
+
+        else if (computerScore === humanScore) {
+            console.log(`Tie score! ${computerScore}-${humanScore}`);
         }
 
         else {
-            console.log("You picked the same choice as the computer. Tie round!");
+            console.log(`Human wins: ${humanScore}-${computerScore}`);
         }
-        //TEST: console.log(computerScore);
-        //TEST: console.log(humanScore);
     };
 
-//TEST playRound function
-//const humanSelection = getUserChoice();
-//const computerSelection = getComputerChoice();
-//playRound(humanSelection, computerSelection);
+//STEP 5: Write logic to play the entire game in playGame function
+
+    //Set score variables
+        //humanScore starts at 0
+        //computerScore starts at 0
+    //Play 5 rounds
+        //call playRound 5 times
+
+
+    playGame();
